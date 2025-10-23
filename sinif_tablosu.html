@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınıf Tablosu</title>
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 24px;
+          line-height: 1.5;
+        }
+        h1 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse; /* Kenarlıkları birleştir */
+        }
+        th, td {
+          border: 1px solid #ccc;   /* Hücre kenarlıkları */
+          padding: 8px 12px;        /* İç boşluk */
+          text-align: left;
+        }
+        th {
+          background: #f2f2f2;      /* Başlık arka plan rengi */
+        }
+        tbody tr:nth-child(even){
+          background: #fafafa;      /* Okunabilirlik için zebra çizgisi (opsiyonel) */
+        }
+      </style>
+</head>
+<body>
+    <h1>Sınıf Tablosu</h1>
+    <table>
+        <thead>
+            <th>Öğrenci Numarası</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Notu</th>
+            <th>Doğum Tarihi</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023001</td>
+                <td>Ayşe</td>
+                <td>Yılmaz</td>
+                <td>88</td>
+                <td>2005-03-14</td>
+              </tr>
+              <tr>
+                <td>2023002</td>
+                <td>Mehmet</td>
+                <td>Demir</td>
+                <td>75</td>
+                <td>2004-11-02</td>
+              </tr>
+              <tr>
+                <td>2023003</td>
+                <td>Elif</td>
+                <td>Çetin</td>
+                <td>92</td>
+                <td>2005-06-21</td>
+              </tr>
+              <tr>
+                <td>2023004</td>
+                <td>Burak</td>
+                <td>Kaya</td>
+                <td>67</td>
+                <td>2004-01-30</td>
+              </tr>
+              <tr>
+                <td>2023005</td>
+                <td>Zeynep</td>
+                <td>Şahin</td>
+                <td>81</td>
+                <td>2005-09-10</td>
+              </tr>
+        
+              <!-- +3 yeni öğrenci -->
+              <tr>
+                <td>2023006</td>
+                <td>Emir</td>
+                <td>Arslan</td>
+                <td>90</td>
+                <td>2005-12-05</td>
+              </tr>
+              <tr>
+                <td>2023007</td>
+                <td>Deniz</td>
+                <td>Koç</td>
+                <td>73</td>
+                <td>2004-07-18</td>
+              </tr>
+              <tr>
+                <td>2023008</td>
+                <td>Selin</td>
+                <td>Aydın</td>
+                <td>85</td>
+                <td>2005-02-26</td>
+              </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</body>
+</html>
