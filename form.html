@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Forms</h1>
+
+    <h2>Example</h2>
+    <form>
+        <fieldset>
+            <legend>Kişisel Bilgiler:</legend>
+            <br>
+            <div>
+                <label for="name">Ad:</label>
+                 <input type="text" id="name">
+            </div>
+            <br>
+            <div>
+                <label for="surname">Soyad:</label>
+                 <input type="text" id="surname">
+            </div>
+            <br>
+            <div>
+                <label for="gender">Cinsiyet:</label>
+                <input type="radio" name="gender" value="male">Erkek
+                <input type="radio" name="gender" value="female">Kadın
+            </div>
+            <br>
+            <div>
+                <label for="birthday">Doğum Tarihi:</label>
+                <input type="date" id="birthday">
+            </div>
+            <br>
+            <div>
+                <label for="city">Şehir:</label>
+                <select id="city">
+                    <option value="">Seçiniz...</option>
+                    <optgroup label="Marmara">
+                        <option value="elma">Elma</option>
+                        <option value="armut">Armut</option>
+                        <option value="seftali">Şeftali</option>
+                        <option value="cilek">Çilek</option>
+                    </optgroup>
+                    <!--<optgroup label="Ege">
+                        <option value="Izmir">Izmir</option>
+                        <option value="Mugla">Muğla</option>
+                        <option value="Aydin">Aydın</option>
+                    </optgroup>
+                    <optgroup label="İç Anadolu">
+                        <option value="Ankara">Ankara</option>
+                        <option value="Konya">Konya</option>
+                        <option value="Çankırı">Çankırı</option>
+                    </optgroup>-->
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="hobby">Hobiler</label>
+                <input type="checkbox" name="hobbies[]" value="sport"> Spor
+                <input type="checkbox" name="hobbies[]" value="music"> Müzik
+                <input type="checkbox" name="hobbies[]" value="read"> Okuma
+                <input type="checkbox" name="hobbies[]" value="game"> Oyun
+            </div>
+            <br>
+            <div>
+                <label for="cv">CV:</label>
+                <input type="file" id="cv">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>İletişim Bilgileri:</legend>
+            <br>
+            <div>
+                <label for="email">E-Posta:</label>
+                <input type="email" id="email">
+            </div>
+            <br>
+            <div>
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone">
+            </div>
+            <br>
+            <div>
+                <label for="address">Adres:</label>
+                <textarea id="address"></textarea>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Şifre Oluştur:</legend>
+            <br>
+            <div>
+                <label for="password">Şifre:</label>
+                <input type="password" id="password">
+            </div>
+            <br>
+            <div>
+                <button type="submit">Kayıt Ol</button> &nbsp;
+                <button type="reset">Temizle</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
