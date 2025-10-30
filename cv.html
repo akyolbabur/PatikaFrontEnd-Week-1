@@ -1,0 +1,226 @@
+# Create the HTML file for the user's assignment
+html_content = r"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babur Akyol - Kişisel Web Sayfası</title>
+  <style>
+    /* —— Temel Stil —— */
+    :root{
+      --bg:#0f172a;          /* arka plan */
+      --card:#111827;        /* kart rengi */
+      --text:#e5e7eb;        /* ana metin */
+      --muted:#9ca3af;       /* ikincil metin */
+      --accent:#60a5fa;      /* vurgular */
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, #1f2937, transparent),
+                  radial-gradient(1400px 900px at 120% 10%, #1e3a8a, transparent),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .container{
+      max-width: 980px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+    header{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
+      padding:24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+    header img{
+      width:140px; height:140px; object-fit:cover;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size: clamp(28px, 4.5vw, 40px);
+      letter-spacing:0.2px;
+    }
+    .subtitle{ color:var(--muted); margin-top:4px; }
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(96,165,250,0.15);
+      color:#bfdbfe;
+      font-size:12px;
+      border:1px solid rgba(96,165,250,0.3);
+      margin-right:8px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      margin-top:24px;
+    }
+    @media (min-width: 880px){
+      .grid{
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    section{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:20px;
+    }
+    section h2{
+      margin-top:0;
+      font-size:22px;
+      letter-spacing:.2px;
+    }
+    section h3{ margin-bottom:8px; font-size:18px; color:#dbeafe; }
+    p{ color:var(--text); }
+    ul, ol{ padding-left: 20px; }
+    li{ margin: 6px 0; }
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .links a{ margin-right:14px; }
+    .iframe-wrap{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* Başlıklar, paragraflar ve listeler için farklı stiller örnekleri */
+    h2 { border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom:6px; }
+    p.lead{ color:#e0e7ff; }
+    ul.check > li::marker{ content: "• "; }
+    ol.timeline > li{ padding-left:4px; border-left:3px solid rgba(96,165,250,.35); margin-left:10px; }
+  </style>
+</head>
+<body>
+  <!--
+    Ödev Gereklilikleri Kontrol Listesi:
+    [x] HTML5 temel yapı, head içinde title + meta charset
+    [x] <h1> ana başlık ad içeriyor
+    [x] Alt başlıklarla bölümler: Özgeçmiş, Eğitim, İş Deneyimi, Yetenekler, İletişim
+    [x] Her bölümde en az bir paragraf
+    [x] En az bir <ol> ve bir <ul> (3+ madde)
+    [x] En az bir <img> alt özelliğiyle
+    [x] En az iki <a> bağlantı
+    [x] En az bir <iframe> (Google Maps)
+    [x] Dahili CSS ile temel stiller (arka plan, yazı tipi/rengi, farklı stiller)
+    [x] Düzen için bölümler (<section>) ve kapsayıcı
+  -->
+  <div class="container">
+    <header>
+      <div>
+        <h1>Babur Akyol</h1>
+        <div class="subtitle">Bilgisayar Mühendisi • C#/.NET • Yazılım & İş Yönetimi</div>
+        <div style="margin-top:10px;">
+          <span class="badge">İstanbul</span>
+          <span class="badge">Aday Full-Stack</span>
+          <span class="badge">.NET & SQL</span>
+        </div>
+        <p class="lead" style="margin-top:12px;">
+          Merhaba! Web ve masaüstü projeleri geliştirmeyi seviyorum. Ölçeklenebilir, temiz kod yazma ve
+          otomasyon çözümlerine odaklanıyorum. Aşağıda eğitimim, deneyimlerim, yeteneklerim ve iletişim bilgilerimi bulabilirsiniz.
+        </p>
+        <div class="links">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section id="ozgecmis">
+        <h2>Özgeçmiş</h2>
+        <p>
+          C# ve .NET ekosisteminde temel/orta seviye bilgimle ekip içinde hızlı adapte olarak üretken bir katkı sağlamayı hedefliyorum.
+          Temiz mimari, sürüm kontrolü ve test kültürüne önem veririm. İngilizce iletişimimi her gün geliştirmeye devam ediyorum.
+        </p>
+      </section>
+
+      <section id="yetenekler">
+        <h2>Yetenekler</h2>
+        <h3>Teknik</h3>
+        <!-- Sırasız liste (ul) -->
+        <ul class="check">
+          <li>C#, .NET, ASP.NET Core</li>
+          <li>Entity Framework, LINQ</li>
+          <li>SQL, PostgreSQL</li>
+          <li>HTML5, CSS3, Temel JavaScript</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <h3>Hobiler</h3>
+        <ul class="check">
+          <li>Kahve demleme ve tadım</li>
+          <li>Teknoloji blogları okumak</li>
+          <li>Doğa yürüyüşü</li>
+        </ul>
+      </section>
+
+      <section id="egitim" style="grid-column: 1 / -1;">
+        <h2>Eğitim</h2>
+        <p>Öne çıkan eğitimlerimi yıl sırasına göre aşağıda listeliyorum.</p>
+        <!-- Sıralı liste (ol) - tarih sırasına göre -->
+        <ol class="timeline">
+          <li><strong>2025</strong> — Modern .NET ile Web Uygulamaları, Çevrimiçi Sertifika</li>
+          <li><strong>2024</strong> — Veri Tabanı Yönetimi ve SQL, Çevrimiçi Sertifika</li>
+          <li><strong>2023</strong> — Bilgisayar Mühendisliği, Lisans</li>
+        </ol>
+      </section>
+
+      <section id="is-deneyimi">
+        <h2>İş Deneyimi</h2>
+        <p>
+          Staj ve freelance projelerde MVC tabanlı küçük modüller geliştirdim; REST API tüketimi,
+          basit CRUD işlemleri ve temel birim testleri yazdım. Ekip içi kod incelemeleriyle kaliteyi artırmayı hedefledim.
+        </p>
+        <ol class="timeline">
+          <li><strong>2025</strong> — Freelance: Küçük İşletme için Stok Takip Modülü (ASP.NET Core)</li>
+          <li><strong>2024</strong> — Staj: İç Araçlar Geliştirme (Entity Framework + SQL)</li>
+        </ol>
+      </section>
+
+      <section id="iletisim">
+        <h2>İletişim</h2>
+        <p>
+          İş birlikleri ve projeler için bana e-posta yoluyla ulaşabilirsiniz:
+          <a href="mailto:babur.ornek@example.com">babur.ornek@example.com</a>
+        </p>
+
+        <h3>Konum (Google Maps iFrame)</h3>
+        <p>İstanbul çevresindeyim. Aşağıda bulunduğum bölgenin haritasını görebilirsiniz.</p>
+        <!-- iFrame: width ve height belirtilmiş -->
+        <div class="iframe-wrap">
+          <iframe
+            src="https://www.google.com/maps?q=Istanbul&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      © 2025 Babur Akyol — Kişisel Web Sayfası
+    </footer>
+  </div>
+</body>
+</html>
