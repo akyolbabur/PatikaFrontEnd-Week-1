@@ -1,0 +1,159 @@
+# Re-create the HTML file for "Ödev 2 - Kişisel Blog Sayfası"
+blog_html = r"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babur Akyol - Kişisel Blog</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#60a5fa;
+      --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, #1f2937, transparent),
+        radial-gradient(1200px 700px at 110% 0%, #1d4ed8, transparent),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+    .container{max-width:1000px;margin:32px auto;padding:0 20px;}
+    header{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+    }
+    h1{margin:0 0 6px 0;font-size:clamp(28px,4.2vw,44px)}
+    .subtitle{color:var(--muted)}
+    nav{margin-top:14px}
+    nav a{color:var(--accent);text-decoration:none;margin-right:12px}
+    nav a:hover{text-decoration:underline}
+    main{margin-top:24px;display:grid;grid-template-columns:1fr;gap:18px}
+    article{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+    }
+    article h2{margin-top:8px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .cover{
+      width:100%;height:260px;object-fit:cover;border-radius:12px;border:1px solid var(--border);
+    }
+    ul, ol{padding-left:18px}
+    li{margin:6px 0}
+    footer{margin:20px 0;color:var(--muted);text-align:center}
+    .tag{display:inline-block;background:rgba(96,165,250,.14);border:1px solid rgba(96,165,250,.35);color:#bfdbfe;padding:2px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+  </style>
+</head>
+<body>
+  <!--
+    Ödev 2 Gereklilikleri:
+    [x] HTML5 temel yapı (title + meta charset)
+    [x] En üstte blog adı içeren <h1>
+    [x] En az 3 blog yazısı: her biri için <h2> + <p>
+    [x] Her yazıda en az bir liste (ul veya ol)
+    [x] Her yazıda en az bir görsel (img) + alt
+    [x] Her yazıda en az iki bağlantı (a)
+  -->
+  <div class="container">
+    <header>
+      <h1>Babur'un Not Defteri</h1>
+      <div class="subtitle">Yazılım, kahve ve verimli çalışma üzerine kısa yazılar</div>
+      <nav>
+        <a href="#yazi-1">#1</a>
+        <a href="#yazi-2">#2</a>
+        <a href="#yazi-3">#3</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Yazı 1 -->
+      <article id="yazi-1">
+        <span class="tag">.NET</span>
+        <span class="tag">Verimlilik</span>
+        <h2>C# ile Küçük Başlayıp Kademeli Büyümek</h2>
+        <div class="meta">Yayın: 31 Ekim 2025 — Okuma: 4 dk</div>
+        <img class="cover" src="https://images.unsplash.com/photo-1515876304845-bf5d236d0f80?q=80&w=1600&auto=format&fit=crop" alt="Kod editöründe C# projesi açık bir ekran" />
+        <p>
+          Yeni bir projeye başlarken <em>küçük bir çekirdek</em> oluşturup onu iterasyonlarla büyütmek; hata ayıklamayı,
+          test yazmayı ve ekip iletişimini kolaylaştırır. Bu yazıda .NET tabanlı bir web uygulamasını
+          modul modül nasıl büyüttüğümü paylaşıyorum.
+          Ayrıca Entity Framework ile migration yönetiminde dikkat ettiğim noktaları da özetliyorum.
+        </p>
+        <ul>
+          <li>Önce <strong>minimum çalışan iskelet</strong> (API + temel veri modeli)</li>
+          <li>Her adımda <strong>test ve kod gözden geçirme</strong></li>
+          <li>Konfigürasyonları <strong>ortam değişkenleri</strong> ile yönetmek</li>
+        </ul>
+        <p>
+          İlgili kaynaklar: 
+          <a href="https://learn.microsoft.com/dotnet/core/introduction" target="_blank" rel="noopener">.NET Başlangıç</a> ve
+          <a href="https://learn.microsoft.com/ef/" target="_blank" rel="noopener">Entity Framework Dokümanı</a>.
+        </p>
+      </article>
+
+      <!-- Yazı 2 -->
+      <article id="yazi-2">
+        <span class="tag">Kahve</span>
+        <span class="tag">Alışkanlık</span>
+        <h2>Geliştiriciler için Kahve Ritüeli: Odaklanma İçin 10 Dakika</h2>
+        <div class="meta">Yayın: 28 Ekim 2025 — Okuma: 3 dk</div>
+        <img class="cover" src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1600&auto=format&fit=crop" alt="Demleme ekipmanlarıyla hazırlanmış kahve" />
+        <p>
+          Kısa bir demleme molası, zihni koddan koparmadan <strong>odak tazeleme</strong> sağlar.
+          Ritüelin ana fikri: su ısınırken yapılacak minik hazırlıklar ve ardından sade tadım.
+          Zamanlayıcıyı çalıştır, suyu koy, çekirdekleri öğüt… ve bu 10 dakikanın sonunda temiz bir başlangıç.
+        </p>
+        <ol>
+          <li>Su: 92–94°C aralığı</li>
+          <li>Öğütüm: Orta-ince (V60 için)</li>
+          <li>Demleme: 2:30–3:00 dk</li>
+        </ol>
+        <p>
+          Detaylara meraklıysan <a href="https://www.bonappetit.com/story/pour-over-coffee" target="_blank" rel="noopener">pour-over rehberi</a> ve
+          <a href="https://www.home-barista.com/" target="_blank" rel="noopener">Home-Barista topluluğu</a> faydalı.
+        </p>
+      </article>
+
+      <!-- Yazı 3 -->
+      <article id="yazi-3">
+        <span class="tag">İş Yönetimi</span>
+        <span class="tag">Notion</span>
+        <h2>Yan Projeleri Yönetmek: Hafif CRM Kurulumu</h2>
+        <div class="meta">Yayın: 20 Ekim 2025 — Okuma: 5 dk</div>
+        <img class="cover" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Kanban panosu ve görev etiketleri" />
+        <p>
+          Freelance işler ve denemeler birikince basit bir CRM şablonu hayat kurtarıyor.
+          Notion üzerinde <strong>Müşteriler</strong>, <strong>Fırsatlar</strong> ve <strong>Görevler</strong> tablolarını ilişkilendirip
+          bir kanban görünümüyle ilerleme sağlıyorum. Otomasyon için de n8n ile e-posta etiketlerine göre kayıt açtırıyorum.
+        </p>
+        <ul>
+          <li>Temel veri modeli: Müşteri ↔ Fırsat ↔ Görev</li>
+          <li>Görünümler: Kanban, Takvim, Tablo</li>
+          <li>Otomasyon: n8n ile webhook tetikleme</li>
+        </ul>
+        <p>
+          İlham ve dokümantasyon için 
+          <a href="https://www.notion.so/templates" target="_blank" rel="noopener">Notion şablon galerisi</a> ve
+          <a href="https://n8n.io/workflows" target="_blank" rel="noopener">n8n örnek akışları</a>na göz atabilirsin.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      © 2025 Babur Akyol — Kişisel Blog
+    </footer>
+  </div>
+</body>
+</html>
